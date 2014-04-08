@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Date Calculator</title>
+	<link rel="stylesheet" href="css/foundation.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body ng-app="app">
+	<div ng-controller="DateController">
+	  <div class="row">
+	    <div class="large-12 columns">
+		 
+		  <h2>Calculate the duration between two days:</h2>
+		 <div class="panel">
+		  Start Date:<input type="datetime-local" ng-model="startDate" value="startDate" ng-change="calculateDuration()">
+		  End Date:<input type="datetime-local" ng-model="endDate" value="endDate" ng-change="calculateDuration()"><br />
+	     </div>
+		</div>
+	  </div>
+	  <div class="row">
+	    <div class="large-6 columns">
+		  <h4 ng-show="showCalculation">{{ duration.days }} days {{ duration.hours }} hours and {{ duration.minutes }} minutes</h4>
+		</div>
+		<div class="large-6 columns">
+			<label class='error'>{{warning}}</label>
+		</div>
+	  </div>
+	</div>
+	
+	<script type="text/javascript" src="js/app.js"></script>
+	<script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
